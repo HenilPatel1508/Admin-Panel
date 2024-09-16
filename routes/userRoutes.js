@@ -1,0 +1,15 @@
+const express = require('express')
+const router = express.Router()
+const userController = require('../controller/userController')
+router.post('/signin',userController.signin)
+router.post('/signup',userController.store)
+router.post('/sendotp',userController.sendotp)
+router.post('/change-password',userController.changepassword)
+router.get('/',userController.show)
+// router.get('/:id',userController.singleuser)
+router.get('/singleUser',userController.queryUser)
+router.get('/:email',userController.singleUserByEmail)
+router.delete('/:email',userController.deletUserByEmail)
+// router.get('/',userController.index)
+
+module.exports= router
